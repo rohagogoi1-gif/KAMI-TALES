@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anime Story Web — Pro</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="stories.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body class="light">
+<header class="top-bar">
+  <div class="left"><h1 class="logo">Anime Story Web</h1></div>
+  <div class="center">
+    <input id="searchInput" placeholder="Search stories, tags, chapters..." />
+    <select id="filterSelect">
+      <option value="all">All</option>
+      <option value="topRated">Top Rated</option>
+      <option value="mostViewed">Most Viewed</option>
+      <option value="recent">Recent</option>
+    </select>
+  </div>
+  <div class="right">
+    <button id="themeSwitch">Toggle Dark</button>
+    <select id="colorSchemeSelect">
+      <option value="default">Purple</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+    </select>
+    <button id="randomStoryBtn">🎲</button>
+    <a href="admin.html" class="btn small-link">Admin</a>
+    <a href="profile.html" class="btn small-link">Profile</a>
+  </div>
+</header>
+
+<main>
+  <section id="noticeArea" class="card notice-board-container">
+    <div id="noticeBoard" class="card notice-board"><strong>Notice:</strong> <span id="noticeTextDisplay">Stories are saved locally.</span></div>
+    <div id="noticeAdminPanel" class="admin-panel hidden">
+      <input type="text" id="noticeText" placeholder="Enter notice message">
+      <select id="noticeType"><option value="info">Info</option><option value="success">Success</option><option value="error">Error</option></select>
+      <input type="color" id="noticeColor" value="#2196F3">
+      <button id="addNoticeBtn" class="btn">Add Notice</button>
+    </div>
+  </section>
+
+  <section class="options-container card">
+    <button id="exportBtn" class="btn">Export All (ZIP)</button>
+    <input id="importFile" type="file" accept="application/json" style="display:none">
+    <button id="importBtn" class="btn">Import Stories (JSON)</button>
+    <button class="option1">Option 1</button>
+    <button class="option2">Option 2</button>
+  </section>
+
+  <section id="storiesGrid" class="grid"></section>
+</main>
+
+<footer class="footer">
+  <small>Anime Story Web — Pro • Offline-ready • LocalStorage</small>
+</footer>
+</body>
+</html>

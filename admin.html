@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — Anime Story Web (Pro)</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="stories.js"></script>
+<script defer src="script_admin.js"></script>
+</head>
+<body class="light">
+<main style="max-width:1100px;margin:18px auto;padding:0 12px">
+  <section class="card" id="authSection">
+    <h2>Admin / User Login</h2>
+    <div id="authMsg" class="small"></div>
+    <input id="authUser" placeholder="Username">
+    <input id="authPass" placeholder="Password" type="password">
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button id="loginBtn" class="btn">Login</button>
+      <button id="registerBtn" class="btn">Register</button>
+      <button id="logoutBtn" class="btn hidden">Logout</button>
+    </div>
+    <div id="loggedAs" class="small" style="margin-top:8px"></div>
+    <div id="changePassSection" class="hidden" style="margin-top:8px">
+      <input id="newPass" placeholder="New password" type="password">
+      <button id="changePassBtn" class="btn">Change Password</button>
+    </div>
+  </section>
+
+  <section id="adminPanel" class="card hidden">
+    <h2>Admin Panel</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <input id="storyTitle" placeholder="Story Title">
+      <input id="storyTags" placeholder="Tags (comma separated)">
+      <input id="storyThumbnail" type="file" accept="image/*">
+    </div>
+
+    <textarea id="storyContentInput" placeholder="Full story content (HTML allowed)"></textarea>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button id="addStoryBtn" class="btn">Add Story</button>
+      <button id="updateStoryBtn" class="btn hidden">Update Story</button>
+      <button id="exportAllBtn" class="btn">Export Stories (JSON)</button>
+      <button id="importStoriesBtn" class="btn">Import Stories (JSON)</button>
+    </div>
+
+    <h3>Existing Stories</h3>
+    <div id="storyList"></div>
+
+    <h3>Notice Management</h3>
+    <textarea id="noticeInput" placeholder="Notice text"></textarea>
+    <select id="noticeLevel"><option value="info">Info</option><option value="success">Success</option><option value="error">Error</option></select>
+    <input id="noticeHex" type="color" value="#2196F3">
+    <button id="saveNoticeAdmin" class="btn">Save Notice</button>
+
+    <h3>Site Options</h3>
+    <button id="clearAllBtn" class="btn">Clear All Data (Dev)</button>
+  </section>
+</main>
+</body>
+</html>

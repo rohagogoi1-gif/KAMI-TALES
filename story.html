@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Story — Anime Story Web</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="stories.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body class="light">
+<header class="top-bar"><a href="index.html" class="btn small-link">← Home</a><h1 id="storyTitleEl">Loading...</h1></header>
+<main class="book-container">
+  <div id="storyMeta" class="card"></div>
+
+  <nav id="chapterNav" class="card hidden"></nav>
+
+  <article id="storyContent" class="book-page"></article>
+
+  <section id="ratingComments" class="card">
+    <div id="rating-widget">
+      <h3>Rate this story</h3>
+      <div class="stars" id="starsWidget" aria-label="Star rating" role="radiogroup"></div>
+      <p id="avgRatingText">Average: —</p>
+      <p id="rating-result">Your rating: 0</p>
+    </div>
+
+    <div id="commentsWidget">
+      <h3>Comments</h3>
+      <form id="commentForm">
+        <input id="commentAuthor" placeholder="Your name (optional)">
+        <textarea id="commentText" placeholder="Write a comment..." required></textarea>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn" type="submit">Add Comment</button>
+          <button id="clearCommentsBtn" type="button" class="btn">Clear Comments</button>
+        </div>
+      </form>
+      <ul id="commentsList"></ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>
